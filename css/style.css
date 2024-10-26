@@ -1,0 +1,398 @@
+/*Fontkészletek*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@700&display=swap');
+
+/*
+        változók deklarálása
+        */
+:root {
+    --orange: #ffb32f;
+    --dark: #1e283c;
+    --base-text: #818181;
+    --lightgrey: #f7f7f7;
+
+    /*fő font*/
+    --main-text: 'Open Sans', sans-serif;
+    --alt-text: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+p {
+    margin:1.5em auto;
+}
+html, body {
+    height: 100%;
+    font-family: var(--main-text);
+    color: var(--base-text);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--alt-text);
+    color: var(--dark);
+}
+
+/*mobilefirst*/
+.hide {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#hero {
+    background: var(--base-text) url("/images/03.jpg") center no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-blend-mode: multiply;
+}
+
+#hero > .container {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 18px;
+}
+
+.hero-rotator {
+    position: relative;
+    display: inline-block;
+    padding: .2em 0;
+    height: 1em;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: var(--lightgrey);
+}
+   
+
+.hero-rotator span {
+    position: absolute;
+    left: 4.1rem;
+    opacity: 0;
+    white-space: nowrap;
+    display: inline-block;
+    clip-path: inset(0 100% 0 0); /* Elrejti a szöveget */
+}
+
+.hero-rotator span {
+    color: var(--orange);
+}
+
+#hero > .container > p {
+    color: var(--lightgrey);
+    margin: 20px 0 30px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 21px;
+    width: 100%;
+}
+
+/*sticky fejléc*/
+#main-header.sticky {
+    background: #fff;
+    position: fixed;
+    top: 0;
+}
+
+.sticky a {
+    color: var(--dark);
+}
+
+/*menü mobilon ne látszódjon alapból*/
+.menu-toggle {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.main-menu {
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: column;
+}
+
+/*dynamic typing - animated headline*/
+
+
+section {
+   /* background: orange;*/
+}
+
+/*section:before {
+    display:block;
+   !* height:20px;*!
+   !* width:40px;*!
+    background: red;
+    content:'';
+}*/
+/*section:after {
+    display:block;
+    height:1px;
+    background: lime;
+    content:'';
+}*/
+/*gombok*/
+.btn {
+    align-self: flex-start;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    transition: background 500ms ease-in-out;
+    font-size: 12px;
+}
+
+.btn:hover {
+    background: var(--dark);
+}
+
+/*logo*/
+.logo {
+    flex: 1;
+}
+
+.logo img {
+    height: 42px;
+}
+
+/*Menü stílusok*/
+#main-header {
+    background: transparent;
+    border-bottom: 1px solid var(--lightgrey);
+    box-shadow: 0 0 7px rgba(0, 0, 0, .5); /*x-offset y-offset size color*/
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+.main-menu {
+    display:none;
+}
+.main-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    /*padding-top:1em;
+    padding-bottom:1em;
+    padding-left:10px;*/
+    padding: 1.1em 0 .5em;
+    margin-bottom: .6em;
+    margin-left: 10px;
+    /*border-bottom:1px solid transparent;*/
+    text-transform: uppercase;
+    transition: all 500ms ease-in-out;
+}
+
+.main-menu a:after {
+    display: block;
+    height: 1px;
+    background: var(--orange);
+    content: '';
+    width: 0;
+    transition: all 500ms ease-in-out;
+    position: relative;
+    bottom: -5px;
+}
+
+.main-menu a:hover:after {
+    width: 100%;
+}
+
+.main-menu a:hover {
+    color: var(--orange);
+}
+
+/*.main-menu li {
+    background: lime;
+    padding:1em 15px;
+}*/
+/*SZEKCIÓCÍM BLOKKOK*/
+.sectionTitle {
+    margin: 0 auto 45px;
+    text-align: center;
+    /*ideiglenes padding hogy a szekciók főcimei ne csusszanak a menü alá navigációnál*/
+    padding-top:65px;
+    color: var(--dark);
+}
+
+.sectionTitle > .subtitle {
+    text-transform:lowercase;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight: bold;
+    color:var(--orange);
+}
+.sectionTitle > .subtitle:before,
+.sectionTitle > .subtitle:after {
+    width:2em;
+    height:2px;
+    background: var(--orange);
+    display:inline-block;
+    content:'';
+    margin:0 1em;
+}
+
+.sectionTitle > h2 {
+    text-transform:uppercase;
+    margin:5px auto;
+}
+
+
+/*tablet*/
+@media screen and (min-width: 768px) {
+    body {
+        /*background: lightcoral;*/
+    }
+
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .logo {
+        align-self: center;
+    }
+
+    .hero-title, .hero-rotator {
+        font-size:30px;
+    }
+
+    #hero > .container > p {
+        width: 71%;
+        font-size:16px;
+    }
+
+    .hero-rotator > span {
+        left: 6.1rem;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size:14px;
+        font-family: 'Open Sans', sans-serif;
+        border-radius: 0px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .menu-toggle {
+        display: none; /*mert csak mobilon kell*/
+    }
+
+    .main-menu {
+        display: flex !important;
+    }
+
+    .sectionTitle {
+        max-width:70%;
+    }
+
+    .personal-info {
+        columns: 2;
+        column-count: 2;
+        column-gap: 30px;
+    }
+}
+/*mobile first*/
+img {
+    max-width:100%;
+}
+.lightBG {
+    background: var(--lightgrey);
+}
+/*flex boxok működése*/
+.flex-container > .box {
+    flex:1;
+    /*background: pink;
+    border: 1px solid grey;*/
+}
+#about .flex-container > .box:first-child {
+    flex:0 0 65%;
+}
+
+/*personal info lista elemei*/
+.personal-info {
+    margin:30px auto;
+}
+.personal-info > li {
+    padding:10px 0;
+    border-bottom:1px solid var(--base-text);
+}
+.personal-info > li::first-letter {
+    text-transform: uppercase;
+}
+.personal-info > li > span {
+       color: var(--dark);
+}
+
+/*SKILL*/
+
+#skill .bar {
+    height:1em;
+    background: grey;
+}
+#skill .bar > .inner {
+    height:1em;
+    background: var(--orange);
+}
+.skill-bars .title {
+    color: var(--dark);
+    display:flex;
+    justify-content:space-between;
+    text-transform:uppercase;
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+#skill > footer {
+    background:var(--dark);
+}
+
+/*desktop*/
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+    .sectionTitle {
+        max-width:55%;
+    }
+    /*hero*/
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-rotator {
+        font-size: 40px;
+        line-height: 38px;
+    }
+
+    .hero-rotator > span {
+        left: 8rem;
+    }
+}

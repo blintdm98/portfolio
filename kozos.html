@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Szakmai Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--ikonok stíluslapja-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-gap: 15px;
+        }
+
+        /*contact info + social*/
+        .info > li {
+            padding-bottom: 15px;
+        }
+        .info > li > b {
+            color: var(--dark);
+            display: block;
+        }
+        .info>.social > a{
+            color: var(--dark);
+            display: inline-block;
+            font-size: 1.3em;
+            margin: 5px;
+            margin-right: 10px;
+            transition: color 750ms ease-in-out;
+        }
+        .info>.social > a:hover{
+            color: var(--orange);
+        }
+        input,textarea{
+            display: inline-block;
+            border: none;
+            width:100%;
+            height:auto;
+            padding: 5px;
+            border-bottom: 1px solid var(--lightgrey);
+        }
+        input:focus,textarea:focus{
+            border-bottom: 1px solid var(--dark);
+            transition: all 750ms ease-in-out;
+        }
+        ::placeholder{
+            font-family: var(--main-text);
+            color: var(--base-text);
+        }
+        :focus{
+            border: none;
+            outline: none;
+        }
+        .cards{
+            display:grid;
+            grid-template-columns:1fr;
+        }
+        .cards>.box{
+            height: 300px;  
+            background: orange;
+            padding: 5px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        
+
+        @media screen and (min-width: 768px){
+            .grid-1-2{
+                grid-template-columns: 1fr 2fr;
+            }
+            .grid-1-1{
+                grid-template-columns: 1fr 1fr;
+            }
+            .contact-form > label:nth-child(3),
+            .contact-form > label:nth-child(4){
+                grid-column: 1/3;
+            }
+            .contact-form>.btn{
+                border: none;
+                justify-self: start;
+            }
+            .cards{
+                grid-template-columns: repeat(2,1fr );
+            }
+        }
+        @media screen and (min-width: 1200px){
+            .cards{
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<header id="main-header" class="container">
+    <nav class="container flex-container">
+        <div class="logo"><a href="#hero"><img src="images/brand-logo.png" alt="logo"></a></div>
+        <ul class="main-menu flex-container" >
+            <li><a href="#hero">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#skill">skill</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#testimonial">testimonial</a></li>
+            <li><a href="#blog">blog</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </nav>
+</header>
+<section id="hero">
+    <div class="container">
+        <h1 class="hero-title">I am Ádám Bálint!</h1>
+        <div class="hero-rotator">I am a
+            <span>UI/UX designer.</span>
+            <span>Developer.</span>
+            <span>Freelancer.</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iste quod sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iste quod sit!</p>
+        <a href="/balintadamresume.pdf" class="btn" download>download cv</a>
+    </div>
+</section>
+<section id="about" class="container">
+    <!--.sectionTitle>span.subtitle{about}+h2{about myself}+p>lorem15-->
+    <div class="sectionTitle container">
+        <span class="subtitle">about</span>
+        <h2>about myself</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+    </div>
+    <div class="flex-container container">
+        <div class="box">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at, dicta exercitationem ipsam
+                obcaecati sequi? Autem consequuntur eveniet exercitationem rem sapiente ullam. Animi cumque ea ex
+                exercitationem fugiat labore, laboriosam minus molestias nam obcaecati perspiciatis quo soluta ut velit
+                voluptatum.</p>
+            <p>Accusantium iste officia placeat unde? A accusamus architecto assumenda corporis culpa dolorem, est fuga
+                fugiat incidunt, iste molestias non odit praesentium provident, quas qui ratione? Asperiores, blanditiis
+                eveniet impedit modi molestias nam nisi non, nostrum perferendis quia tempora temporibus,
+                voluptatem.</p>
+            <ul class="personal-info">
+                <li>name : <span>Bálint Ádám</span></li>
+                <li>email : <span>blintdm98@yahoo.com</span></li>
+                <li>Phone : <span>+40745148242</span></li>
+                <li>date of Birth : <span>1998.03.24</span></li>
+                <li>Blood Group : <span>00</span></li>
+                <li>Address : <span>Csikszereda</span></li>
+            </ul>
+        </div>
+        <div class="box">
+            <img src="images/adam.jpg" alt="play volt">
+        </div>
+    </div>
+
+</section>
+<section id="skill" class="lightBG">
+    <div class="container">
+        <div class="sectionTitle">
+            <span class="subtitle">skill</span>
+            <h2>my developer skills</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+        </div>
+        <div class="flex-container">
+            <div class="box">
+                <h2>Some talk about my develop skill</h2>
+                <p>At mattis condimentum leo cubilia dictumst purus cubilia nisl quisque lacus ultricies proin massa fermentum placerat sociosqu ornare felis ultricies taciti mauris. Tempor mi, cum a condimentum commodo bibendum risus mauris natoque molestie tellus. In iaculis ad augue gravida posuere.</p>
+
+                <p>Lectus neque fames lacinia magnis primis. Dictumst torquent dictumst. Bibendum et rutrum feugiat fames interdum purus feugiat praesent Nunc vivamus habitant nam ultricies est. Massa amet cubilia, vitae nonummy nisl. Rutrum mus velit vivamus sapien est.</p>
+            </div>
+            <div class="box">
+                <ul class="skill-bars">
+                    <li>
+                        <div class="title">
+                            <span>html</span><span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="bar">
+                                <div class="inner" style="width:90%"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <span>css</span><span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="bar">
+                                <div class="inner" style="width:80%"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <span>javascript</span><span>10%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="bar">
+                                <div class="inner" style="width:10%"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <span>php</span><span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="bar">
+                                <div class="inner" style="width:80%"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <span>wordpress</span><span>0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="bar">
+                                <div class="inner" style="width:0%"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="box">
+                <i class="fas fa-user"></i>
+                <div class="counter">15+</div>
+                <p>Lorem, ipsum.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-user"></i>
+                <div class="counter">15+</div>
+                <p>Quos, saepe?</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-user"></i>
+                <div class="counter">15+</div>
+                <p>Dicta, magnam!</p>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="services" class="container">
+    <div class="sectionTitle">
+        <span class="subtitle">services</span>
+        <h2>what i do</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+    </div>
+    <div class="cards">
+        <div class="box">service 1</div>
+        <div class="box">service 2</div>
+        <div class="box">service 3</div>
+        <div class="box">service 4</div>
+        <div class="box">service 5</div>
+        <div class="box">service 6</div>
+    </div>
+</section>
+<section id="portfolio" class="lightBG container">
+    <div class="container">
+        <div class="sectionTitle">
+            <span class="subtitle">portfolio</span>
+            <h2>Recent projects</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+        </div>
+
+        </div>
+</section>
+<section id="testimonial" class="container">
+    <div class="sectionTitle">
+        <span class="subtitle">testimonial</span>
+        <h2>WHAT CLIENT SAY’S</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+    </div>
+</section>
+<section id="blog" class="lightBG">
+    <div class="container">
+        <div class="sectionTitle">
+            <span class="subtitle">blog</span>
+            <h2>WHAT’S news</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+        </div>
+    </div>
+</section>
+<section id="contact" class="container">
+    <div class="sectionTitle">
+        <span class="subtitle">contact</span>
+        <h2>get in touch</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
+    </div>
+    <div class="grid-container grid-1-2">
+        <ul class="info">
+            <li><b>Email</b>yourdomainname@gmail.com</li>
+            <li><b>Phone</b>+00 61 700 800</li>
+            <li><b>Address</b>Mouroubra WA 6472, Australia.</li>
+            <li><b>Website</b>www.yourdomain.com</li>
+            <li class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+        </ul>
+        <form class="contact-form grid-container grid-1-1">
+            <label>
+                <input type="text" name="your-name" placeholder="Your Name">
+            </label>
+            <label>
+                <input type="email" name="your-name" placeholder="your@email.com">
+            </label>
+            <label>
+                <input type="text" name="subject" placeholder="Your Subject">
+            </label>
+            <label>
+                <textarea type="message" id="message" cols="30"rows="10" placeholder="Your Message"> </textarea>
+            </label>
+            <button class="btn">Send</button>
+            
+        </form>
+    </div>
+</section>
+<footer id="main-footer" class="lightBG container"> Közös weboldal &copy; 2021 | <a href="https://ruander.hu" target="_blank">Ruander
+    Oktatóközpont</a> |
+    <a href="https://themetrading.com/html/runaway/template/regular/index-5.html" target="_blank">Mintaoldal</a>
+</footer>
+<script>
+    //menu váltó működése 1.
+    let menuToggle = document.querySelector('.menu-toggle');
+    let mainMenu = document.querySelector('#main-header .main-menu');//menü
+    menuToggle.onclick = function () {
+        console.log(mainMenu.style.display);
+        //ha üres a display vagy 'none' akkor jelenjen meg
+        if (mainMenu.style.display === '' || mainMenu.style.display === 'none') {
+            mainMenu.style.display = 'flex';
+        } else {//különben tünjön el
+            mainMenu.style.display = 'none';
+        }
+
+    }
+
+
+    //gördítés esemény
+    window.onscroll = function () {
+        console.log(window.scrollY);
+
+        let elem = document.getElementById('main-header');
+        let poz = window.scrollY;
+        //ha 65pxnél lejjebb gördítünk legyen a menu sticky
+
+        if (poz > 65) {
+            elem.classList.add('sticky');
+        } else {
+            elem.classList.remove('sticky');
+        }
+    }
+
+    //képességek váltakozása gsappal
+    document.addEventListener("DOMContentLoaded", function() {
+    const spans = document.querySelectorAll(".hero-rotator span");
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+
+    spans.forEach(span => {
+        tl.to(span, {
+            opacity: 1,
+            clipPath: "inset(0 0% 0 0)", // Fokozatosan megjeleníti a szöveget
+            duration: 1,
+            ease: "power2.inOut"
+        })
+        .to(span, {
+            clipPath: "inset(0 100% 0 0)", // Fokozatosan eltünteti a szöveget
+            // opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            delay: 1 // Kis szünet a megjelenés és eltűnés között
+        }, "+=1"); // 1 másodperc késleltetés az egyes szavak között
+    });
+});
+
+</script>
+
+</body>
+</html>
