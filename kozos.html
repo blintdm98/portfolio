@@ -7,6 +7,9 @@
     <!--ikonok stíluslapja-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Orbitron:wght@400..900&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <style>
         .grid-container {
@@ -96,23 +99,26 @@
 <body>
 <header id="main-header" class="container">
     <nav class="container flex-container">
-        <div class="logo"><a href="#hero"><img src="images/brand-logo.png" alt="logo"></a></div>
+        <div class="logo">
+            <h2>Bálint Ádám</h2>
+            <!-- <a href="#hero"><img src="images/brand-logo.png" alt="logo"></a> -->
+        </div>
         <ul class="main-menu flex-container" >
-            <li><a href="#hero">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#skill">skill</a></li>
-            <li><a href="#services">services</a></li>
-            <li><a href="#portfolio">portfolio</a></li>
-            <li><a href="#testimonial">testimonial</a></li>
-            <li><a href="#blog">blog</a></li>
-            <li><a href="#contact">contact</a></li>
+            <li><a class="main-link" href="#hero">home</a></li>
+            <li><a class="main-link" href="#about">about</a></li>
+            <li><a class="main-link" href="#skill">skill</a></li>
+            <li><a class="main-link" href="#services">services</a></li>
+            <li><a class="main-link" href="#portfolio">portfolio</a></li>
+            <li><a class="main-link" href="#testimonial">testimonial</a></li>
+            <li><a class="main-link" href="#blog">blog</a></li>
+            <li><a class="main-link" href="#contact">contact</a></li>
         </ul>
         <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
 </header>
 <section id="hero">
     <div class="container">
-        <h1 class="hero-title">I am Ádám Bálint!</h1>
+        <h1 class="hero-title">Hi! My name is Ádám!</h1>
         <div class="hero-rotator">I am a
             <span>UI/UX designer.</span>
             <span>Developer.</span>

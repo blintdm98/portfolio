@@ -31,6 +31,7 @@ html, body {
     height: 100%;
     font-family: var(--main-text);
     color: var(--base-text);
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 {
@@ -105,7 +106,6 @@ h1, h2, h3, h4 {
 
 /*sticky fejléc*/
 #main-header.sticky {
-    background: #fff;
     position: fixed;
     top: 0;
 }
@@ -117,12 +117,10 @@ h1, h2, h3, h4 {
 /*menü mobilon ne látszódjon alapból*/
 .menu-toggle {
     position: absolute;
-    right: 15px;
-    top: 15px;
-}
-
-.main-menu {
-    display: none;
+    cursor: pointer;
+    right: 2rem;
+    top: 25px;
+    color: var(--orange);
 }
 
 .flex-container {
@@ -130,26 +128,6 @@ h1, h2, h3, h4 {
     flex-flow: column;
 }
 
-/*dynamic typing - animated headline*/
-
-
-section {
-   /* background: orange;*/
-}
-
-/*section:before {
-    display:block;
-   !* height:20px;*!
-   !* width:40px;*!
-    background: red;
-    content:'';
-}*/
-/*section:after {
-    display:block;
-    height:1px;
-    background: lime;
-    content:'';
-}*/
 /*gombok*/
 .btn {
     align-self: flex-start;
@@ -171,22 +149,30 @@ section {
     flex: 1;
 }
 
-.logo img {
-    height: 42px;
-}
+.logo > h2 {
+    color:var(--lightgrey);
+    padding-top: 20px;
+    font-family: "Orbitron", sans-serif;}
 
 /*Menü stílusok*/
 #main-header {
-    background: transparent;
-    border-bottom: 1px solid var(--lightgrey);
+    background: var(--dark);
+    border-bottom: 1px solid var(--orange);
     box-shadow: 0 0 7px rgba(0, 0, 0, .5); /*x-offset y-offset size color*/
     position: absolute;
     width: 100%;
     z-index: 10;
+    min-height: 72px;
+}
+
+.main-menu li {
+    padding: 0 15px;
 }
 .main-menu {
     display:none;
+    background-color: var(--dark);
 }
+
 .main-menu a {
     color: #fff;
     text-decoration: none;
@@ -195,8 +181,7 @@ section {
     padding-bottom:1em;
     padding-left:10px;*/
     padding: 1.1em 0 .5em;
-    margin-bottom: .6em;
-    margin-left: 10px;
+    /* margin-bottom: .6em; */
     /*border-bottom:1px solid transparent;*/
     text-transform: uppercase;
     transition: all 500ms ease-in-out;
@@ -221,10 +206,6 @@ section {
     color: var(--orange);
 }
 
-/*.main-menu li {
-    background: lime;
-    padding:1em 15px;
-}*/
 /*SZEKCIÓCÍM BLOKKOK*/
 .sectionTitle {
     margin: 0 auto 45px;
@@ -257,25 +238,68 @@ section {
     margin:5px auto;
 }
 
+/*mobile first*/
+img {
+    max-width:100%;
+}
+.lightBG {
+    background: var(--lightgrey);
+}
+/*flex boxok működése*/
+.flex-container > .box {
+    flex:1;
+}
+#about .flex-container > .box:first-child {
+    flex:0 0 65%;
+}
+
+/*personal info lista elemei*/
+.personal-info {
+    margin:30px auto;
+}
+.personal-info > li {
+    padding:10px 0;
+    border-bottom:1px solid var(--base-text);
+}
+.personal-info > li::first-letter {
+    text-transform: uppercase;
+}
+.personal-info > li > span {
+       color: var(--dark);
+}
+
+/*SKILL*/
+#skill .bar {
+    height:1em;
+    background: grey;
+}
+#skill .bar > .inner {
+    height:1em;
+    background: var(--orange);
+}
+.skill-bars .title {
+    color: var(--dark);
+    display:flex;
+    justify-content:space-between;
+    text-transform:uppercase;
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+#skill > footer {
+    background:var(--dark);
+}
 
 /*tablet*/
 @media screen and (min-width: 768px) {
-    body {
-        /*background: lightcoral;*/
-    }
 
     .container {
         width: 95%;
         margin: 0 auto;
     }
 
-    .flex-container {
-        display: flex;
-        flex-flow: row nowrap;
-    }
-
-    .logo {
-        align-self: center;
+    .menu-toggle {
+        right: 3.1rem;
     }
 
     .hero-title, .hero-rotator {
@@ -301,14 +325,6 @@ section {
         text-transform: uppercase;
     }
 
-    .menu-toggle {
-        display: none; /*mert csak mobilon kell*/
-    }
-
-    .main-menu {
-        display: flex !important;
-    }
-
     .sectionTitle {
         max-width:70%;
     }
@@ -319,59 +335,27 @@ section {
         column-gap: 30px;
     }
 }
-/*mobile first*/
-img {
-    max-width:100%;
-}
-.lightBG {
-    background: var(--lightgrey);
-}
-/*flex boxok működése*/
-.flex-container > .box {
-    flex:1;
-    /*background: pink;
-    border: 1px solid grey;*/
-}
-#about .flex-container > .box:first-child {
-    flex:0 0 65%;
-}
 
-/*personal info lista elemei*/
-.personal-info {
-    margin:30px auto;
-}
-.personal-info > li {
-    padding:10px 0;
-    border-bottom:1px solid var(--base-text);
-}
-.personal-info > li::first-letter {
-    text-transform: uppercase;
-}
-.personal-info > li > span {
-       color: var(--dark);
-}
+/*burger menü jelenés*/
+@media screen and (min-width: 992px) {
+    .flex-container {
+        display: flex;
+        flex-flow: row nowrap;
+    }
 
-/*SKILL*/
+    .menu-toggle {
+        display: none; /*mert csak mobilon kell*/
+    }
+    
+    .main-menu {
+        display: flex !important;
+        padding-top: 6px;
+    }
 
-#skill .bar {
-    height:1em;
-    background: grey;
-}
-#skill .bar > .inner {
-    height:1em;
-    background: var(--orange);
-}
-.skill-bars .title {
-    color: var(--dark);
-    display:flex;
-    justify-content:space-between;
-    text-transform:uppercase;
-    font-weight: bold;
-    margin: 15px 0 5px;
-}
+    .main-menu a {
+        margin-bottom: .6em;
+    }
 
-#skill > footer {
-    background:var(--dark);
 }
 
 /*desktop*/
