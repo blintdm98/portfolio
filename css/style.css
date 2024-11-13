@@ -108,9 +108,10 @@ h1, h2, h3, h4 {
 #main-header.sticky {
     position: fixed;
     top: 0;
+    background-color: var(--lightgrey);
 }
 
-.sticky a {
+.sticky .main-menu a {
     color: var(--dark);
 }
 
@@ -150,13 +151,12 @@ h1, h2, h3, h4 {
 }
 
 .logo > h2 {
-    color:var(--lightgrey);
+    color:var(--dark);
     padding-top: 20px;
     font-family: "Orbitron", sans-serif;}
 
 /*Menü stílusok*/
 #main-header {
-    background: var(--dark);
     border-bottom: 1px solid var(--orange);
     box-shadow: 0 0 7px rgba(0, 0, 0, .5); /*x-offset y-offset size color*/
     position: absolute;
@@ -170,7 +170,6 @@ h1, h2, h3, h4 {
 }
 .main-menu {
     display:none;
-    background-color: var(--dark);
 }
 
 .main-menu a {
@@ -252,6 +251,9 @@ img {
 #about .flex-container > .box:first-child {
     flex:0 0 65%;
 }
+#about .flex-container > .box:nth-child(2){
+    text-align: center;
+}
 
 /*personal info lista elemei*/
 .personal-info {
@@ -296,6 +298,10 @@ img {
     .container {
         width: 95%;
         margin: 0 auto;
+    }
+
+    #main-header .container{
+        width: 100%;
     }
 
     .menu-toggle {
@@ -361,10 +367,13 @@ img {
 /*desktop*/
 @media screen and (min-width: 1200px) {
     .container {
-        width: 70%;
+        width: 95%;
     }
     .sectionTitle {
         max-width:55%;
+    }
+    .sectionTitle > h2 {
+        font-size: 32px;
     }
     /*hero*/
     .hero-title {
