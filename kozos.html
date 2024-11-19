@@ -387,6 +387,27 @@
     });
 });
 
+// skillbar kitöltése
+document.addEventListener("DOMContentLoaded", function() {
+    let bars = document.querySelectorAll(".inner");
+
+    bars.forEach((bar) => {
+
+        // Szerezd meg a width értéket az aktuális stílusból
+        let targetWidth = bar.style.width; // Például "90%"
+
+        // Állítsd az induló szélességet 0%-ra
+        bar.style.width = "0";
+        // Szerezd meg az egyes sávok százalék értékét a width attribútumból
+        let width = bar.getAttribute("style").match(/\d+/)[0];
+        
+        // Indítsd el az animációt a sávok kitöltéséhez
+        setTimeout(() => {
+            bar.style.width = targetWidth;
+        }, 1000); // késleltetés az animáció indításához (0,5 másodperc)
+    });
+});
+
 </script>
 
 </body>
