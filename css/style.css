@@ -324,6 +324,10 @@ img {
     background:var(--dark);
 }
 
+#experience {
+    background: url("/images/03.jpg") no-repeat center fixed
+}
+
 /*tablet*/
 @media screen and (min-width: 768px) {
 
