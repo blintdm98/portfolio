@@ -290,7 +290,7 @@ img {
     width: 0;
     background-color: var(--orange);
     border-radius: 5px;
-    transition: width 1.5s ease-in-out;
+    transition: width 2s ease-in-out;
 }
 
 .skill-bars {

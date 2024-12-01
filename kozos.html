@@ -178,51 +178,51 @@
                 <ul class="skill-bars">
                     <li>
                         <div class="title">
-                            <span>html</span><span>90%</span>
+                            <span>html</span><span class="percent">0%</span>
                         </div>
                         <div class="progress-bar">
                             <div class="bar">
-                                <div class="inner" style="width:90%"></div>
+                                <div class="inner" data-width="90"></div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="title">
-                            <span>css</span><span>80%</span>
+                            <span>css</span><span class="percent">0%</span>
                         </div>
                         <div class="progress-bar">
                             <div class="bar">
-                                <div class="inner" style="width:80%"></div>
+                                <div class="inner" data-width="80"></div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="title">
-                            <span>javascript</span><span>10%</span>
+                            <span>javascript</span><span class="percent">0%</span>
                         </div>
                         <div class="progress-bar">
                             <div class="bar">
-                                <div class="inner" style="width:10%"></div>
+                                <div class="inner" data-width="10"></div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="title">
-                            <span>php</span><span>80%</span>
+                            <span>php</span><span class="percent">0%</span>
                         </div>
                         <div class="progress-bar">
                             <div class="bar">
-                                <div class="inner" style="width:80%"></div>
+                                <div class="inner" data-width="80"></div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="title">
-                            <span>wordpress</span><span>0%</span>
+                            <span>wordpress</span><span class="percent">0%</span>
                         </div>
                         <div class="progress-bar">
                             <div class="bar">
-                                <div class="inner" style="width:0%"></div>
+                                <div class="inner" data-width="0"></div>
                             </div>
                         </div>
                     </li>
@@ -396,17 +396,40 @@ document.addEventListener("DOMContentLoaded", function() {
         // Szerezd meg a width értéket az aktuális stílusból
         let targetWidth = bar.style.width; // Például "90%"
 
+        let percentElement = bar.closest("li").querySelector(".percent"); // Százalékos értéket mutató elem
+
         // Állítsd az induló szélességet 0%-ra
         bar.style.width = "0";
         // Szerezd meg az egyes sávok százalék értékét a width attribútumból
-        let width = bar.getAttribute("style").match(/\d+/)[0];
-        
-        // Indítsd el az animációt a sávok kitöltéséhez
+        let width = bar.getAttribute("style").match(/\d+/)[bar];
+
         setTimeout(() => {
             bar.style.width = targetWidth;
         }, 1000); // késleltetés az animáció indításához (0,5 másodperc)
     });
 });
+
+// százalékok animációja
+document.addEventListener("DOMContentLoaded", function () {
+    let bars = document.querySelectorAll(".inner");
+
+    bars.forEach((bar) => {
+        let finalWidth = parseInt(bar.dataset.width);
+        let percentElement = bar.closest("li").querySelector(".percent"); // Százalékos értéket mutató elem
+        console.log(finalWidth)
+
+        // GSAP animáció
+        gsap.to(bar, {
+            width: finalWidth + "%", // Cél szélesség
+            duration: 2, // Időtartam
+            ease: "power2.out",
+            onUpdate: function () {
+                let currentWidth = parseFloat(gsap.getProperty(bar, "width"));
+                    percentElement.textContent = Math.round(currentWidth) + "%";
+            },
+        });
+    });
+})
 
 </script>
 
