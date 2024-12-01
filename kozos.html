@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Orbitron:wght@400..900&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         .grid-container {
             display: grid;
@@ -202,7 +203,7 @@
                         </div>
                         <div class="progress-bar">
                             <div class="bar">
-                                <div class="inner" data-width="10"></div>
+                                <div class="inner" data-width="85"></div>
                             </div>
                         </div>
                     </li>
@@ -402,10 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
         bar.style.width = "0";
         // Szerezd meg az egyes sávok százalék értékét a width attribútumból
         let width = bar.getAttribute("style").match(/\d+/)[bar];
-
-        setTimeout(() => {
-            bar.style.width = targetWidth;
-        }, 1000); // késleltetés az animáció indításához (0,5 másodperc)
+        bar.style.width = targetWidth;
     });
 });
 
@@ -420,6 +418,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // GSAP animáció
         gsap.to(bar, {
+            scrollTrigger: {
+                trigger: bar, // Az elem, amely aktiválja a görgetést
+                start: "top 80%", // Mikor induljon az animáció (elem teteje az ablak 80%-ánál)
+                toggleActions: "play none none none", // Csak egyszer játszódjon le
+            },
             width: finalWidth + "%", // Cél szélesség
             duration: 2, // Időtartam
             ease: "power2.out",
