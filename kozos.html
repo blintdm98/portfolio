@@ -12,90 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Orbitron:wght@400..900&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <style>
-        .grid-container {
-            display: grid;
-            grid-gap: 15px;
-        }
-
-        /*contact info + social*/
-        .info > li {
-            padding-bottom: 15px;
-        }
-        .info > li > b {
-            color: var(--dark);
-            display: block;
-        }
-        .info>.social > a{
-            color: var(--dark);
-            display: inline-block;
-            font-size: 1.3em;
-            margin: 5px;
-            margin-right: 10px;
-            transition: color 750ms ease-in-out;
-        }
-        .info>.social > a:hover{
-            color: var(--orange);
-        }
-        input,textarea{
-            display: inline-block;
-            border: none;
-            width:100%;
-            height:auto;
-            padding: 5px;
-            border-bottom: 1px solid var(--lightgrey);
-        }
-        input:focus,textarea:focus{
-            border-bottom: 1px solid var(--dark);
-            transition: all 750ms ease-in-out;
-        }
-        ::placeholder{
-            font-family: var(--main-text);
-            color: var(--base-text);
-        }
-        :focus{
-            border: none;
-            outline: none;
-        }
-        .cards{
-            display:grid;
-            grid-template-columns:1fr;
-        }
-        .cards>.box{
-            height: 300px;  
-            background: orange;
-            padding: 5px;
-            margin-left: 5px;
-            margin-top: 5px;
-        }
-        
-
-        @media screen and (min-width: 768px){
-            .grid-1-2{
-                grid-template-columns: 1fr 2fr;
-            }
-            .grid-1-1{
-                grid-template-columns: 1fr 1fr;
-            }
-            .contact-form > label:nth-child(3),
-            .contact-form > label:nth-child(4){
-                grid-column: 1/3;
-            }
-            .contact-form>.btn{
-                border: none;
-                justify-self: start;
-            }
-            .cards{
-                grid-template-columns: repeat(2,1fr );
-            }
-        }
-        @media screen and (min-width: 1200px){
-            .cards{
-                grid-template-columns: repeat(3,1fr);
-            }
-        }
-
-    </style>
 </head>
 <body>
 <header id="main-header" class="container">
@@ -233,7 +149,7 @@
 
     </div>
 </section>
-<section id="experience">
+<!-- <section id="experience">
     <div class="container">
         <div class="box">
             <i class="fas fa-user"></i>
@@ -251,7 +167,7 @@
             <p>Dicta, magnam!</p>
         </div>
     </div>
-</section>
+</section> -->
 <section id="services" class="container">
     <div class="sectionTitle">
         <span class="subtitle">services</span>
@@ -259,15 +175,113 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloribus ea ipsam iste quas, veniam.</p>
     </div>
     <div class="cards">
-        <div class="box">service 1</div>
-        <div class="box">service 2</div>
-        <div class="box">service 3</div>
-        <div class="box">service 4</div>
-        <div class="box">service 5</div>
-        <div class="box">service 6</div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Web Development
+            </h3>
+            <p>
+                Frontend development using modern technologies like React, Angular, and TypeScript.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Backend Development
+            </h3>
+            <p>
+                Developing and maintaining APIs using Java. Managing and optimizing databases with PostgreSQL and Firebase.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                UI/UX Design
+            </h3>
+            <p>
+                Designing clean, modern, and functional user interfaces using HTML, CSS, SCSS, Tailwind, and Material-UI.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Mobile-Friendly Solutions
+            </h3>
+            <p>
+                Crafting responsive designs and mobile-friendly web solutions.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Integration with APIs
+            </h3>
+            <p>
+                Integrating third-party APIs.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Project Collaboration
+            </h3>
+            <p>
+                Working collaboratively in teams following Scrum methodology. Managing version control with Git and Sourcetree.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Problem-Solving
+            </h3>
+            <p>
+                Solving technical challenges independently and performing efficient debugging.
+            </p>
+        </div>
+        <div class="box">
+            <div>
+                <strong>
+                    01.
+                </strong>
+            </div>
+            <h3>
+                Continuous Learning
+            </h3>
+            <p>
+                Learning and implementing new technologies in projects (e.g., Flutter and Cesium JS, Tailwind).
+            </p>
+        </div>
     </div>
 </section>
-<section id="portfolio" class="lightBG container">
+<section id="portfolio" class="lightBG">
     <div class="container">
         <div class="sectionTitle">
             <span class="subtitle">portfolio</span>

@@ -328,8 +328,97 @@ img {
     background: url("/images/03.jpg") no-repeat center fixed
 }
 
+.grid-container {
+    display: grid;
+    grid-gap: 15px;
+}
+
+/*contact info + social*/
+.info > li {
+    padding-bottom: 15px;
+}
+.info > li > b {
+    color: var(--dark);
+    display: block;
+}
+.info>.social > a{
+    color: var(--dark);
+    display: inline-block;
+    font-size: 1.3em;
+    margin: 5px;
+    margin-right: 10px;
+    transition: color 750ms ease-in-out;
+}
+.info>.social > a:hover{
+    color: var(--orange);
+}
+input,textarea{
+    display: inline-block;
+    border: none;
+    width:100%;
+    height:auto;
+    padding: 5px;
+    border-bottom: 1px solid var(--lightgrey);
+}
+input:focus,textarea:focus{
+    border-bottom: 1px solid var(--dark);
+    transition: all 750ms ease-in-out;
+}
+::placeholder{
+    font-family: var(--main-text);
+    color: var(--base-text);
+}
+:focus{
+    border: none;
+    outline: none;
+}
+.cards{
+    display:grid;
+    grid-template-columns:1fr;
+}
+.cards>.box{
+    height: 300px;  
+    background: orange;
+}
+
+.cards > .box > h3 {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.cards > .box > div {
+    position: relative;
+    border-bottom: 1px dotted;
+}
+
+.cards > .box > div > strong {
+    position: relative;
+    font-size: 42px;
+    top: 20px;
+    z-index: 1;
+}
+
 /*tablet*/
 @media screen and (min-width: 768px) {
+
+    .grid-1-2{
+        grid-template-columns: 1fr 2fr;
+    }
+    .grid-1-1{
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-form > label:nth-child(3),
+    .contact-form > label:nth-child(4){
+        grid-column: 1/3;
+    }
+    .contact-form>.btn{
+        border: none;
+        justify-self: start;
+    }
+    .cards{
+        grid-template-columns: repeat(2,1fr );
+    }
 
     .container {
         width: 80%;
@@ -423,5 +512,8 @@ img {
 
     .hero-rotator > span {
         left: 8rem;
+    }
+    .cards{
+        grid-template-columns: repeat(3,1fr);
     }
 }
