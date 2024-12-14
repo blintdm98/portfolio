@@ -9,6 +9,7 @@
     --dark: #1e283c;
     --base-text: #818181;
     --lightgrey: #f7f7f7;
+    --shadow: #e1e1e1;
 
     /*fő font*/
     --main-text: 'Open Sans', sans-serif;
@@ -210,7 +211,7 @@ section {
 }
 
 /*SZEKCIÓCÍM BLOKKOK*/
-.sectionTitle {
+.section-title {
     margin: 0 auto 45px;
     text-align: center;
     /*ideiglenes padding hogy a szekciók főcimei ne csusszanak a menü alá navigációnál*/
@@ -218,7 +219,7 @@ section {
     color: var(--dark);
 }
 
-.sectionTitle > .subtitle {
+.section-title > .subtitle {
     text-transform:lowercase;
     display:flex;
     justify-content:center;
@@ -226,8 +227,8 @@ section {
     font-weight: bold;
     color:var(--orange);
 }
-.sectionTitle > .subtitle:before,
-.sectionTitle > .subtitle:after {
+.section-title > .subtitle:before,
+.section-title > .subtitle:after {
     width:2em;
     height:2px;
     background: var(--orange);
@@ -236,7 +237,7 @@ section {
     margin:0 1em;
 }
 
-.sectionTitle > h2 {
+.section-title > h2 {
     text-transform:uppercase;
     margin:5px auto;
 }
@@ -402,7 +403,7 @@ input:focus,textarea:focus{
 .cards > .card > .box > .number {
     position: relative;
     text-align: right;
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted var(--shadow);
 }
 
 .cards > .card > .box > div > strong {
@@ -413,6 +414,7 @@ input:focus,textarea:focus{
     z-index: 1;
     transition: transform 0.3s ease;
     padding-right: 20px;
+    color: var(--shadow);
 }
 .card:hover strong {
     transform: translateY(-15px);
@@ -436,6 +438,11 @@ input:focus,textarea:focus{
 
 .card > .box > p {
     padding: 20px 20px;
+}
+
+.port-box {
+    display: grid;
+    grid-template-columns:1fr;
 }
 
 /*tablet*/
@@ -495,7 +502,7 @@ input:focus,textarea:focus{
         text-transform: uppercase;
     }
 
-    .sectionTitle {
+    .section-title {
         max-width:70%;
     }
 
@@ -503,6 +510,10 @@ input:focus,textarea:focus{
         columns: 2;
         column-count: 2;
         column-gap: 30px;
+    }
+
+    .port-box{
+        grid-template-columns: repeat(3,1fr);
     }
 }
 
@@ -533,10 +544,10 @@ input:focus,textarea:focus{
     .container {
         width: 80%;
     }
-    .sectionTitle {
+    .section-title {
         max-width:55%;
     }
-    .sectionTitle > h2 {
+    .section-title > h2 {
         font-size: 32px;
     }
     /*hero*/
